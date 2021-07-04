@@ -56,8 +56,8 @@
                 android:textSize="26sp"
                 android:gravity="center_horizontal" />
             <TextView
-                android:id="@+id/celcius"
-                android:layout_width="match_parent"
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-thin"
                 android:text="24°C"
@@ -70,16 +70,9 @@
                 android:orientation="horizontal"
                 android:gravity="center">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Min Temp"
-                    android:id="@+id/min_temp"
-                    android:textColor="@color/white"
-                    android:layout_marginLeft="120dp"
-                    >
-                </TextView>
-
+                <TextView android:id="@+id/temp_min" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Min Temp: 05:05 AM"
+                    android:layout_marginLeft="60dp"/>
                 <Space
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"></Space>
@@ -87,7 +80,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Max Temp"
+                    android:text="Max Temp 05:05 AM"
                     android:id="@+id/max_temp"
                     >
                 </TextView>
