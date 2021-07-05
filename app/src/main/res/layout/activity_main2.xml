@@ -7,12 +7,12 @@
     tools:context=".MainActivity"
     android:background="@drawable/main_back">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:background="@drawable/wet"
         >
-    </LinearLayout>
+    </RelativeLayout>
     <EditText
         android:gravity="center"
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
         android:gravity="center"
         android:text="FIND"
         android:textColor="#4CAF50"
-        android:textSize="40dp" />
+        android:textSize="40sp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
         android:gravity="center"
         android:textColor="#FFEB3B"
         android:textStyle="italic"
-        android:textSize="70dp"
+        android:textSize="70sp"
         />
 
 </RelativeLayout>

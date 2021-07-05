@@ -17,22 +17,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Excuting the Task
         weathertask().execute()
     }
+    //creating inner class for Async Task
     inner class weathertask(): AsyncTask<String, Void, String>() {
+
+
         override fun onPreExecute() {
             super.onPreExecute()
-            findViewById<ProgressBar>(R.id.loader).visibility=View.VISIBLE
-            findViewById<TextView>(R.id.errortext).visibility=View.GONE
-            findViewById<RelativeLayout>(R.id.mainconatiner).visibility=View.GONE
+            findViewById<ProgressBar>(R.id.loader).visibility=View.VISIBLE //Enabling progress bar
+            findViewById<TextView>(R.id.errortext).visibility=View.GONE  //Disabling error text
+            findViewById<RelativeLayout>(R.id.mainconatiner).visibility=View.GONE //Disabling mainconatiner for Api Call
         }
 
+        //calling API in background
         override fun doInBackground(vararg params: String?): String? {
             var response: String?
             try {
                 response =
                     URL("https://api.openweathermap.org/data/2.5/weather?q=sonpur&units=metric&appid=06c921750b9a82d8f5d1294e1586276f")
-                        .readText(Charsets.UTF_8)
+                        .readText(Charsets.UTF_8) //API Call using url
             } catch (e: Exception) {
                 response = null
             }
@@ -40,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        //Fetching Dta from API
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
                 try {
@@ -66,6 +72,9 @@ class MainActivity : AppCompatActivity() {
                     val address = jsonObj.getString("name")+", "+sys.getString("country")
 
 
+
+
+                   //Fetching our textviews with his id and attaching with API
                     findViewById<TextView>(R.id.address).text=address
                     findViewById<TextView>(R.id.max_temp).text=tempMax
                     findViewById<TextView>(R.id.temp_min).text=tempMin
@@ -84,7 +93,8 @@ class MainActivity : AppCompatActivity() {
                     findViewById<RelativeLayout>(R.id.mainconatiner).visibility=View.VISIBLE
 
                 }
-                catch (e:Exception){
+                catch (e:Exception) //if any error occured errortext visible
+                {
                     findViewById<ProgressBar>(R.id.loader).visibility=View.GONE
                     findViewById<TextView>(R.id.errortext).visibility=View.VISIBLE
                 }

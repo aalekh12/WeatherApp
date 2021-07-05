@@ -72,9 +72,9 @@
 
                 <TextView android:id="@+id/temp_min" android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:text="Min Temp: 05:05 AM"
-                    android:layout_marginLeft="60dp"/>
+                    android:layout_marginLeft="50dp"/>
                 <Space
-                    android:layout_width="50dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"></Space>
 
                 <TextView
@@ -95,7 +95,7 @@
             android:orientation="vertical"
             android:layout_alignParentBottom="true"
             android:id="@+id/details_container"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="30dp"
             android:layout_marginLeft="10dp"
             >
             <LinearLayout
@@ -344,7 +344,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/info"
                         android:textSize="14sp"
-                        android:text="Evan"
+                        android:text="Aalekh"
 
                         />
 
